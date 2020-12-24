@@ -55,5 +55,27 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
             toDoAdapter.editItem(position);
         }
     }
+
+    @Override
+    public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive){
+        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+
+        Drawable icon;
+        ColorDrawable background;
+
+        View itemView = viewHolder.itemView;
+        int backgroundCornerOffset = 20;
+
+        if(dX > 0){
+            icon = ContextCompat.getDrawable(toDoAdapter.getContext(), R.drawable.ic_baseline_edit);
+            background = new ColorDrawable(Color.GREEN);
+        }else {
+            icon = ContextCompat.getDrawable(toDoAdapter.getContext(), R.drawable.ic_baseline_delete);
+            background = new ColorDrawable(Color.RED);
+        }
+        int iconMargin = (itemView.getHeight() - icon.getIntrinsicHeight()) /2;
+        int iconTop = itemView.getTop() + (itemView.getHeight() - icon.getIntrinsicHeight() /2);
+        int iconBottom = iconTop + icon.getIntrinsicHeight();
+    }
 }
 
