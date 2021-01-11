@@ -19,9 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:paddingStart="8dp"
-            android:buttonTint="@android:color/holo_green_dark"
+            android:buttonTint="@android:color/holo_orange_light"
+            android:drawableTint="@android:color/holo_orange_light"
             tools:text="Go to the market and bring vegetables immediately today."
             android:paddingLeft="8dp" />
+
 
     </RelativeLayout>
 

@@ -39,7 +39,7 @@ public class AddTask extends BottomSheetDialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(STYLE_NORMAL, R.style.Theme_AppCompat_Dialog);
+        setStyle(STYLE_NORMAL, R.style.Theme_Design_Light);
     }
 
     @Nullable

@@ -1,11 +1,18 @@
 package com.example.todoapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -43,6 +50,7 @@ public class MainActivity extends AppCompatActivity  implements DialogCloseListe
         taskAdapter = new ToDoAdapter(databaseHandler, this);
         taskRecycleView.setAdapter(taskAdapter);
 
+
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
         itemTouchHelper.attachToRecyclerView(taskRecycleView);
 
@@ -58,6 +66,7 @@ public class MainActivity extends AppCompatActivity  implements DialogCloseListe
                 AddTask.newInstance().show(getSupportFragmentManager(), AddTask.TAG);
             }
         });
+
     }
 
     @Override

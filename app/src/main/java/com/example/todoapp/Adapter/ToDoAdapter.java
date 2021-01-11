@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -17,11 +18,14 @@ import com.example.todoapp.AddTask;
 import com.example.todoapp.MainActivity;
 import com.example.todoapp.Model.ToDoModel;
 import com.example.todoapp.R;
+import com.example.todoapp.RecyclerItemTouchHelper;
 import com.example.todoapp.Utils.DatabaseHandler;
 
 import java.util.List;
 
-public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
+public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder>  {
+
+
 
     private List<ToDoModel> todoList;
     private DatabaseHandler db;
